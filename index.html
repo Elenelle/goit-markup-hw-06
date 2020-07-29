@@ -67,9 +67,90 @@
           <br />
           ДЛЯ ВАШЕГО БИЗНЕСА
         </h1>
-        <a href="" data-modal-open class="main-button-link" data-modal-open>
+        <button
+          type="button"
+          class="main-button-link primary-button"
+          data-modal-open
+        >
           Заказать услугу
-        </a>
+        </button>
+      </section>
+      <section data-modal class="modal-backdrop is-hidden">
+        <section class="order-modal-window">
+          <button data-modal-close class="close-modal-window" type="button">
+            <svg class="close-svg">
+              <use href="./images/modal-sprite.svg#icon-close"></use>
+            </svg>
+          </button>
+          <form>
+            <h3 class="order-title">Оставьте свои данные, мы вам перезвоним</h3>
+            <section class="form-wrapper">
+              <input
+                class="order-input"
+                type="text"
+                placeholder=" "
+                name="user-name"
+                id="user-name"
+              />
+              <label class="order-label" for="user-name">Имя</label>
+              <svg class="order-icon">
+                <use href="./images/modal-sprite.svg#icon-name"></use>
+              </svg>
+            </section>
+            <section class="form-wrapper">
+              <input
+                class="order-input"
+                type="tel"
+                placeholder=" "
+                name="user-tel"
+                id="user-tel"
+              />
+              <label class="order-label" for="user-tel">Телефон</label>
+              <svg class="order-icon">
+                <use href="./images/modal-sprite.svg#icon-telephone"></use>
+              </svg>
+            </section>
+            <section class="form-wrapper">
+              <input
+                class="order-input"
+                type="email"
+                placeholder=" "
+                name="user-email"
+                id="user-email"
+              />
+              <label class="order-label" for="user-email">Почта</label>
+              <svg class="order-icon">
+                <use href="./images/modal-sprite.svg#icon-email"></use>
+              </svg>
+            </section>
+            <section class="comment-wrapper">
+              <textarea
+                class="comment-textarea"
+                id="comment"
+                name="comment"
+                rows=""
+              >
+              </textarea>
+
+              <label class="comment-label" for="comment">Комментарий</label>
+            </section>
+            <section class="policy-wrapper">
+              <label class="check policy-label" for="policy">
+                <input
+                  class="policy-checkbox"
+                  id="policy"
+                  type="checkbox"
+                  name="policy"
+                  value="policy"
+                />
+                <span class="checkbox"></span>
+                Соглашаюсь с рассылкой и принимаю
+                <a class="policy-link" href="">Условия договора</a>
+              </label>
+            </section>
+            <button class="order-buttom" type="submit">Отправить</button>
+          </form>
+        </section>
       </section>
       <!--Преимущества-->
       <section class="advantages section">
@@ -443,83 +524,6 @@
         <p class="developed" lang="en">2020 | Developed by GoIT Students</p>
       </section>
     </footer>
-    <section data-modal class="modal-backdrop is-hidden">
-      <section class="order-modal-window">
-        <button data-modal-close class="close-modal-window" type="button">
-          <svg class="close-svg">
-            <use href="./images/modal-sprite.svg#icon-close"></use>
-          </svg>
-        </button>
-        <form>
-          <h3 class="order-title">Оставьте свои данные, мы вам перезвоним</h3>
-          <section class="form-wrapper">
-            <input
-              class="order-input"
-              type="text"
-              placeholder=" "
-              name="user-name"
-              id="user-name"
-            />
-            <label class="order-label" for="user-name">Имя</label>
-            <svg class="order-icon">
-              <use href="./images/modal-sprite.svg#icon-name"></use>
-            </svg>
-          </section>
-          <section class="form-wrapper">
-            <input
-              class="order-input"
-              type="tel"
-              placeholder=" "
-              name="user-tel"
-              id="user-tel"
-            />
-            <label class="order-label" for="user-tel">Телефон</label>
-            <svg class="order-icon">
-              <use href="./images/modal-sprite.svg#icon-telephone"></use>
-            </svg>
-          </section>
-          <section class="form-wrapper">
-            <input
-              class="order-input"
-              type="email"
-              placeholder=" "
-              name="user-email"
-              id="user-email"
-            />
-            <label class="order-label" for="user-email">Почта</label>
-            <svg class="order-icon">
-              <use href="./images/modal-sprite.svg#icon-email"></use>
-            </svg>
-          </section>
-          <section class="comment-wrapper">
-            <textarea
-              class="comment-textarea"
-              id="comment"
-              name="comment"
-              rows=""
-            >
-            </textarea>
-
-            <label class="comment-label" for="comment">Комментарий</label>
-          </section>
-          <section class="policy-wrapper">
-            <label class="check policy-label" for="policy">
-              <input
-                class="policy-checkbox"
-                id="policy"
-                type="checkbox"
-                name="policy"
-                value="policy"
-              />
-              <span class="checkbox"></span>
-              Соглашаюсь с рассылкой и принимаю
-              <a class="policy-link" href="">Условия договора</a>
-            </label>
-          </section>
-          <button class="order-buttom" type="submit">Отправить</button>
-        </form>
-      </section>
-    </section>
     <script src="./js/modal.js"></script>
   </body>
 </html>
