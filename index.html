@@ -67,17 +67,14 @@
           <br />
           ДЛЯ ВАШЕГО БИЗНЕСА
         </h1>
-        <button
-          type="button"
-          class="main-button-link primary-button"
-          data-modal-open
-        >
+        <button type="button" class="order-buttom" data-modal-open>
           Заказать услугу
         </button>
       </section>
-      <section data-modal class="modal-backdrop is-hidden">
-        <section class="order-modal-window">
-          <button data-modal-close class="close-modal-window" type="button">
+      <!-- Форма "Заказать услугу" -->
+      <section data-modal class="backdrop is-hidden">
+        <section class="order-modal">
+          <button data-modal-close class="close-modal" type="button">
             <svg class="close-svg">
               <use href="./images/modal-sprite.svg#icon-close"></use>
             </svg>
@@ -123,16 +120,15 @@
                 <use href="./images/modal-sprite.svg#icon-email"></use>
               </svg>
             </section>
-            <section class="comment-wrapper">
-              <textarea
-                class="comment-textarea"
-                id="comment"
-                name="comment"
-                rows=""
-              >
-              </textarea>
-
-              <label class="comment-label" for="comment">Комментарий</label>
+            <section class="form-wrapper">
+            <textarea
+              class="order-input"
+              name="comment"
+              id="comment"
+              rows="6"
+              placeholder=" "
+            ></textarea>
+            <label for="comment" class="order-label texterea">Комментарий</label>
             </section>
             <section class="policy-wrapper">
               <label class="check policy-label" for="policy">
@@ -144,11 +140,12 @@
                   value="policy"
                 />
                 <span class="checkbox"></span>
+                <span class="checkbox-tittle">
                 Соглашаюсь с рассылкой и принимаю
-                <a class="policy-link" href="">Условия договора</a>
-              </label>
+                <a class="policy-link" href="">Условия договора</a></label
+              ></span>
             </section>
-            <button class="order-buttom" type="submit">Отправить</button>
+            <button class="order-form-buttom" type="submit">Отправить</button>
           </form>
         </section>
       </section>
