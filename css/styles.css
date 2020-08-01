@@ -553,6 +553,80 @@ p {
   border-radius: 50%;
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.subscription {
+  display: flex;
+  flex-direction: column;
+}
+.footer-form {
+  display: inline-flex;
+  padding: 0;
+  margin: 0;
+}
+.footer-input {
+  width: 358px;
+  height: 50px;
+  margin-right: 12px;
+  padding-left: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+  background-color: #2f303a;
+  outline: none;
+}
+.join b,
+.subscription b {
+  margin-bottom: 20px;
+  color: var(--white-color);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+}
+.join {
+  margin-right: 94px;
+}
+.button.send {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: transparent;
+}
+.icon-send {
+  margin-left: 10px;
+  color: var(--white-color);
+}
+.caption {
+  margin: 0;
+  padding-top: 18px;
+  padding-bottom: 21px;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 12px;
+  line-height: 2;
+  text-align: center;
+}
+.button {
+  color: var(--white-color);
+  background-color: var(--accent-color);
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.9;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  padding: 10px 28px 10px 29px;
+  min-width: 200px;
+  border: transparent;
+  outline: none;
+  cursor: pointer;
+}
 .site-development {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 18px;
@@ -689,6 +763,7 @@ p {
   margin: 4px 24px 20px 24px;
 }
 /*Форма "Заказать услугу" на Главной*/
+
 .backdrop {
   z-index: 1;
   position: fixed;
@@ -696,31 +771,28 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
+  opacity: 1;
   background-color: rgba(0, 0, 0, 0.2);
-  transform: scale(1, 1);
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 250ms opacity cubic-bezier(0.4, 0, 0.2, 1);
 }
 .is-hidden {
-  overflow: hidden;
-  pointer-events: none;
   opacity: 0;
-  transform: scale(0, 0);
+  pointer-events: none;
 }
-.order-modal {
+.modal {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
-  width: 528px;
-  height: 581px;
-  padding: 40px 40px;
+  min-width: 528px;
+  min-height: 581px;
   background-color: var(--white-color);
-  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 1px 3px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  transition: 250ms transform cubic-bezier(0.4, 0, 0.2, 1);
 }
-.close-modal {
+.modal-close {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -728,11 +800,11 @@ p {
   height: 30px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
-  background: var(--white-color);
+  background-color: var(--white-color);
   cursor: pointer;
   outline: none;
 }
-.close-svg {
+.close-icon {
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -741,56 +813,63 @@ p {
   transition: 250ms fill cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
 }
-.close-svg:focus-within,
-.close-svg:hover {
+.close-icon:hover,
+.close-icon:focus {
   fill: var(--accent-color);
 }
-.order-title {
+form {
+  width: 528px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 40px 40px 50px 40px;
+  margin-bottom: 40px;
+}
+.form-title {
+  margin: 0;
   font-weight: bold;
   font-size: 20px;
   line-height: 23px;
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--main-text-color);
-
   margin-bottom: 30px;
 }
-.form-wrapper {
+.form-field {
   position: relative;
   display: flex;
   flex-direction: column;
   margin-bottom: 28px;
 }
-.form-wrapper input {
-  width: 100%;
-  height: 40px;
-  padding: 12px 18px 12px 42px;
-  box-sizing: border-box;
-  border-radius: 4px;
-  cursor: pointer;
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.form-wrapper input:focus,
-.form-wrapper input:hover {
-  border-color: var(--accent-color);
-  outline: none;
-}
-.order-label {
+.form-label {
   position: absolute;
-  left: 42px;
   top: 50%;
+  left: 42px;
   transform: translateY(-50%);
-  font-family: Roboto;
-  font-style: normal;
+  transition: 250ms transform cubic-bezier(0.4, 0, 0.2, 1),
+    250ms color cubic-bezier(0.4, 0, 0.2, 1);
+}
+.form-fild label {
+  margin-bottom: 4px;
   font-weight: normal;
   font-size: 14px;
   line-height: 16px;
   letter-spacing: 0.01em;
-  color: var(--text-color);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.form-wrapper textarea {
+.form-field input {
+  margin: 0;
+  padding: 0;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 12px 42px;
+  outline: none;
+  transition: 250ms border-color cubic-bezier(0.4, 0, 0.2, 1);
+}
+.form-field input:focus {
+  border-color: var(--accent-color);
+  outline: none;
+}
+.form-field textarea {
   border: 1px solid rgba(33, 33, 33, 0.2);
   box-sizing: border-box;
   border-radius: 4px;
@@ -801,57 +880,38 @@ p {
   transition: 250ms color cubic-bezier(0.4, 0, 0.2, 1),
     250ms border-color cubic-bezier(0.4, 0, 0.2, 1);
 }
-.order-input:focus + .order-label,
-.order-input:not(:placeholder-shown) + .order-label {
+.form-input:focus + .form-label.texterea,
+.form-input:not(:placeholder-shown) + .form-label.texterea {
+  color: var(--accent-color);
+  transform: translateY(-45px) scale(0.9);
+}
+
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label {
   color: var(--accent-color);
   transform: translate(-26px, -45px) scale(0.9);
 }
-.order-icon {
-  position: absolute;
+.texterea {
+  top: 20px;
   left: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 18px;
-  height: 18px;
-  color: var(--main-text-color);
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.order-input:focus ~ .order-icon {
-  fill: var(--accent-color);
-}
-.comment-wrapper {
-  position: relative;
-}
-.comment-textarea {
-  width: 100%;
-  height: 120px;
-  padding: 12px 16px;
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  box-sizing: border-box;
-  border-radius: 4px;
-  margin-bottom: 20px;
+textarea:focus {
+  border-color: var(--accent-color);
   outline: none;
 }
-.comment-label {
+
+.form-icon {
   position: absolute;
-  transform: translateX(-430px) translateY(12px);
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 16px;
-  letter-spacing: 0.01em;
-  color: var(--text-color);
-  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  transition: 250ms fill cubic-bezier(0.4, 0, 0.2, 1);
 }
-.comment-wrapper:focus-within textarea,
-.comment-wrapper:hover textarea {
-  border: 1px solid var(--accent-color);
-}
-.comment-wrapper:focus-within .comment-label,
-.comment-wrapper:hover .comment-label {
-  color: var(--accent-color);
-  transform: translateX(-440px) translateY(-20px);
+.form-input:focus ~ .form-icon {
+  fill: var(--accent-color);
 }
 .policy-checkbox {
   position: absolute;
@@ -893,28 +953,6 @@ p {
   line-height: 24px;
   color: #757575;
 }
-.order-buttom {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  align-items: center;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 30px;
-  outline: none;
-  color: var(--white-color);
-  padding: 10px 55px;
-  background-color: var(--accent-color);
-  border: none;
-  border-radius: 4px;
-  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 1px 3px rgba(0, 0, 0, 0.12);
-
-  cursor: pointer;
-}
 .policy-link {
   justify-content: center;
   font-family: Roboto;
@@ -932,8 +970,6 @@ p {
   transform: translateX(-50%);
   display: flex;
   align-items: center;
-  font-family: Roboto;
-  font-style: normal;
   font-weight: bold;
   font-size: 16px;
   line-height: 30px;
@@ -945,6 +981,6 @@ p {
   border-radius: 4px;
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 1px 3px rgba(0, 0, 0, 0.12);
-
   cursor: pointer;
+  padding: 10px 55px 10px 56px;
 }
